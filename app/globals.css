@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+/* Custom */
+@import "./styles/custom-tailwind.css";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --neutral-0-color: #FFFFFF;
+    --neutral-10-color: #E4E1EB;
+    --neutral-20-color: #CFC9DC;
+    --neutral-30-color: #B8AFCB;
+    --neutral-40-color: #A094B9;
+    --neutral-50-color: #8A7EA7;
+    --neutral-60-color: #6B6182;
+    --neutral-70-color: #5C5472;
+    --neutral-80-color: #4C4662;
+    --neutral-90-color: #3C3752;
+    --neutral-100-color: #2C2942;
+
+    --accent-color: #CEBA9D;
+    --border-color: #695073;
+
+    --background-gradient: linear-gradient(to bottom, #140E1F, #241A2B);
+    --card-gradient: linear-gradient(to bottom, #16101A, #251B2B);
+    --separator-gradient: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #695073 50%, rgba(255, 255, 255, 0) 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@layer base {
+    body {
+        background: var(--background-gradient);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Poppins, Helvetica, sans-serif;
+        color: var(--neutral-0-color);
+        min-height: 100dvh;
+    }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    h1, h2 {
+        color: var(--accent-color);
+    }
+
+    h1 {
+        font-size: 5rem;
+        font-weight: 500;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-bottom: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
 }
