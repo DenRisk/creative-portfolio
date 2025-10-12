@@ -1,67 +1,112 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* Custom */
-@import "./styles/custom-tailwind.css";
+@theme {
+  /*Font Families */
+  --font-sans: 'Poppins', Helvetica, sans-serif;
 
-:root {
-    --neutral-0-color: #FFFFFF;
-    --neutral-10-color: #E4E1EB;
-    --neutral-20-color: #CFC9DC;
-    --neutral-30-color: #B8AFCB;
-    --neutral-40-color: #A094B9;
-    --neutral-50-color: #8A7EA7;
-    --neutral-60-color: #6B6182;
-    --neutral-70-color: #5C5472;
-    --neutral-80-color: #4C4662;
-    --neutral-90-color: #3C3752;
-    --neutral-100-color: #2C2942;
+  /* Color Palette */
+  --color-neutral-0: #ffffff;
+  --color-neutral-10: #e4e1eb;
+  --color-neutral-20: #cfc9dc;
+  --color-neutral-30: #b8afcb;
+  --color-neutral-40: #a094b9;
+  --color-neutral-50: #8a7ea7;
+  --color-neutral-60: #6b6182;
+  --color-neutral-70: #5c5472;
+  --color-neutral-80: #4c4662;
+  --color-neutral-90: #3c3752;
+  --color-neutral-100: #2c2942;
 
-    --accent-color: #CEBA9D;
-    --border-color: #695073;
+  --color-accent: #ceba9d;
+  --color-border: #695073;
 
-    --background-gradient: linear-gradient(to bottom, #140E1F, #241A2B);
-    --card-gradient: linear-gradient(to bottom, #16101A, #251B2B);
-    --separator-gradient: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #695073 50%, rgba(255, 255, 255, 0) 100%);
+  --background-gradient: linear-gradient(to bottom, #140e1f, #241a2b);
+  --card-gradient: linear-gradient(to bottom, #16101a, #251b2b);
+  --separator-gradient: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    #695073 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* Font Sizes */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 4rem;
 }
 
+@layer utilities {
+  .page-container {
+    @apply max-w-[1280px] mx-auto px-6 lg:px-8;
+  }
+
+  .gap-fluid {
+    gap: clamp(0.5rem, 6vw, 3rem);
+  }
+
+  .card-bg {
+    background: var(--card-gradient);
+  }
+}
+
+@layer components {
+  .presentation-card {
+    @apply flex flex-col rounded-4xl p-12 stroke-1 border border-border;
+  }
+}
 
 @layer base {
-    body {
-        background: var(--background-gradient);
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-family: Poppins, Helvetica, sans-serif;
-        color: var(--neutral-0-color);
-        min-height: 100dvh;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    h1, h2 {
-        color: var(--accent-color);
-    }
+  body {
+    background: var(--background-gradient);
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    h1 {
-        font-size: 5rem;
-        font-weight: 500;
-        line-height: 1.1;
-        margin-bottom: 2rem;
-    }
+    @apply font-sans text-[var(--color-neutral-0)] min-h-[100dvh] overflow-x-hidden;
+  }
 
-    h2 {
-        font-size: 3rem;
-        font-weight: 600;
-        line-height: 1.3;
-        margin-bottom: 3rem;
-    }
+  section {
+    @apply scroll-mt-12;
+  }
 
-    h3 {
-        font-size: 2.5rem;
-        font-weight: 600;
-        line-height: 1.3;
-    }
+  h1,
+  h2 {
+    @apply text-[var(--color-accent)];
+  }
 
-    h4 {
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.3;
+  h1 {
+    @apply text-2xl md:text-3xl leading-[1] font-medium mb-6;
+  }
+
+  h2 {
+    @apply text-2xl leading-[1.3] font-semibold mb-12;
+  }
+
+  h3 {
+    @apply text-xl leading-[1.3] font-semibold mb-4;
+  }
+
+  h4 {
+    @apply text-lg leading-[1.3] font-bold;
+  }
+
+  a:not([type='card']) {
+    @apply text-neutral-50 font-semibold hover:text-white transition duration-200 ease-in-out;
+  }
+
+  footer {
+    border-top: 1px solid transparent;
+    border-image: var(--separator-gradient);
+    border-image-slice: 1;
+
+    p {
+      @apply text-neutral-50 font-semibold;
     }
+  }
 }
