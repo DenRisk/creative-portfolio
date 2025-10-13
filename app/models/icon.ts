@@ -1,4 +1,4 @@
-export type IconIds = 'github' | 'linkedin' | 'react' | 'tailwind' | 'angular'
+export type IconIds = 'github' | 'linkedin' | 'react' | 'tailwind' | 'angular' | 'javascript' |'typescript' | 'html' | 'css' | 'sass' | 'figma' | 'blender'
 
 export type IconProps = {
   id: IconIds

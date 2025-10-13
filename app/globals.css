@@ -1,112 +1,99 @@
 @import 'tailwindcss';
 
 @theme {
-  /*Font Families */
-  --font-sans: 'Poppins', Helvetica, sans-serif;
+    /*Font Families */
+    --font-sans: 'Poppins', Helvetica, sans-serif;
 
-  /* Color Palette */
-  --color-neutral-0: #ffffff;
-  --color-neutral-10: #e4e1eb;
-  --color-neutral-20: #cfc9dc;
-  --color-neutral-30: #b8afcb;
-  --color-neutral-40: #a094b9;
-  --color-neutral-50: #8a7ea7;
-  --color-neutral-60: #6b6182;
-  --color-neutral-70: #5c5472;
-  --color-neutral-80: #4c4662;
-  --color-neutral-90: #3c3752;
-  --color-neutral-100: #2c2942;
+    /* Color Palette */
+    --color-neutral-0: #ffffff;
+    --color-neutral-10: #e8e1eb;
+    --color-neutral-20: #d5c8db;
+    --color-neutral-30: #bea9c9;
+    --color-neutral-40: #a88cb7;
+    --color-neutral-50: #9270a5;
+    --color-neutral-60: #7e5d91;
+    --color-neutral-70: #6f517f;
+    --color-neutral-80: #63476f;
+    --color-neutral-90: #563e60;
+    --color-neutral-100: #4a3552;
 
-  --color-accent: #ceba9d;
-  --color-border: #695073;
+    --color-text-accent: #ceba9d;
 
-  --background-gradient: linear-gradient(to bottom, #140e1f, #241a2b);
-  --card-gradient: linear-gradient(to bottom, #16101a, #251b2b);
-  --separator-gradient: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    #695073 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+    --color-accent-primary: #E14967;
+    --color-accent-secondary: #E45B64;
+    --color-accent-hover: #E45B64;
 
-  /* Font Sizes */
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2rem;
-  --text-3xl: 4rem;
+    --bg-gradient-start: #140e1f;
+    --bg-gradient-end: #241a2b;
+
+    --card-bg-start: #1e1525;
+    --card-bg-end: #2c2134;
+
+    /* Font Sizes */
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 4rem;
 }
 
 @layer utilities {
-  .page-container {
-    @apply max-w-[1280px] mx-auto px-6 lg:px-8;
-  }
+    .page-container {
+        @apply max-w-[1280px] mx-auto px-6 lg:px-8;
+    }
 
-  .gap-fluid {
-    gap: clamp(0.5rem, 6vw, 3rem);
-  }
+    .gap-fluid {
+        gap: clamp(0.5rem, 6vw, 3rem);
+    }
 
-  .card-bg {
-    background: var(--card-gradient);
-  }
-}
-
-@layer components {
-  .presentation-card {
-    @apply flex flex-col rounded-4xl p-12 stroke-1 border border-border;
-  }
+    .card-bg {
+        @apply bg-gradient-to-b from-[var(--card-bg-start)] to-[var(--card-bg-end)]
+    }
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background: var(--background-gradient);
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    @apply font-sans text-[var(--color-neutral-0)] min-h-[100dvh] overflow-x-hidden;
-  }
-
-  section {
-    @apply scroll-mt-12;
-  }
-
-  h1,
-  h2 {
-    @apply text-[var(--color-accent)];
-  }
-
-  h1 {
-    @apply text-2xl md:text-3xl leading-[1] font-medium mb-6;
-  }
-
-  h2 {
-    @apply text-2xl leading-[1.3] font-semibold mb-12;
-  }
-
-  h3 {
-    @apply text-xl leading-[1.3] font-semibold mb-4;
-  }
-
-  h4 {
-    @apply text-lg leading-[1.3] font-bold;
-  }
-
-  a:not([type='card']) {
-    @apply text-neutral-50 font-semibold hover:text-white transition duration-200 ease-in-out;
-  }
-
-  footer {
-    border-top: 1px solid transparent;
-    border-image: var(--separator-gradient);
-    border-image-slice: 1;
-
-    p {
-      @apply text-neutral-50 font-semibold;
+    html {
+        scroll-behavior: smooth;
     }
-  }
+
+    body {
+        @apply font-sans text-[var(--color-neutral-0)] min-h-[100dvh] overflow-x-hidden bg-gradient-to-b from-[var(--bg-gradient-start)] to-[var(--bg-gradient-end)] bg-no-repeat bg-cover;
+    }
+
+    section {
+        @apply scroll-mt-12;
+    }
+
+    h1,
+    h2 {
+        @apply text-[var(--color-text-accent)];
+    }
+
+    h1 {
+        @apply text-2xl md:text-3xl leading-[1] font-medium mb-6;
+    }
+
+    h2 {
+        @apply text-2xl leading-[1.3] font-semibold mb-12;
+    }
+
+    h3 {
+        @apply text-xl leading-[1.3] font-semibold mb-4;
+    }
+
+    h4 {
+        @apply text-lg leading-[1.3] font-bold;
+    }
+
+    a:not([type='card']) {
+        @apply text-neutral-30 font-semibold hover:text-white transition duration-200 ease-in-out;
+    }
+
+    footer {
+        @apply border-t border-neutral-40;
+        p {
+            @apply text-neutral-30 font-semibold;
+        }
+    }
 }
