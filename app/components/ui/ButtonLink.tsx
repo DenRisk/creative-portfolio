@@ -9,7 +9,7 @@ function ButtonLink({children, variant = "primary", href, target = "_blank"}: Bu
     const variants = {
         primary: "text-neutral-0 bg-gradient-to-b from-accent-primary to-accent-secondary",
         secondary: "text-neutral-0 bg-transparent border border-accent-primary",
-        link: "text-neutral-50 bg-transparent hover:text-neutral-0",
+        link: "text-neutral-30 bg-transparent hover:text-neutral-0",
     };
 
     const hoverStyle = {

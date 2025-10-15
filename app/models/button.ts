@@ -1,7 +1,7 @@
 export type ButtonComponentModel = {
     children: React.ReactNode;
     onClick?: () => void;
-    variant?: "primary" | "secondary" | "link";
+    variant?: "primary" | "secondary" | "link" | "linkWithBorder";
 }
 
 export type ButtonLinkComponentModel = {

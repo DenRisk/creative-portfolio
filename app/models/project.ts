@@ -6,5 +6,13 @@ export type Project = {
   title: string
   description: string[]
   image: { src: string; alt: string }
-  technologies: (IconIds | 'separator')[];
+  techIcons: (IconIds | 'separator')[];
+  techFilter: ProjectFilterCodes[]
+}
+
+export type ProjectFilterCodes = 'all' | 'javascript' | 'typescript' | 'react' | 'angular' | 'tailwind' |'scss'
+
+export type ProjectFilter = {
+  code: ProjectFilterCodes
+  label: string;
 }

@@ -5,7 +5,7 @@ import Icon from './Icon'
 import Button from '@/app/components/ui/Button'
 import ButtonLink from '@/app/components/ui/ButtonLink'
 
-function ProjectCard({ title, description, image, technologies, siteUrl, codeUrl }: Project) {
+function ProjectCard({ title, description, image, techIcons, siteUrl, codeUrl }: Project) {
     return (
         <div className="project flex flex-col card-bg border border-neutral-80 rounded-3xl overflow-hidden">
             <div className="w-full h-auto overflow-hidden">
@@ -14,7 +14,7 @@ function ProjectCard({ title, description, image, technologies, siteUrl, codeUrl
                     alt={image.alt}
                     width={600}
                     height={300}
-                    className="aspect-[2/1] object-cover w-full h-full transform transition-transform duration-500"
+                    className="aspect-[2/1] object-cover w-full h-full transform transition-transform duration-500 object-top"
                 />
             </div>
 
@@ -41,7 +41,7 @@ function ProjectCard({ title, description, image, technologies, siteUrl, codeUrl
                     </div>
 
                     <div className="flex gap-4 text-neutral-30 flex-wrap">
-                        {technologies.map((tech, index) =>
+                        {techIcons.map((tech, index) =>
                             tech === 'separator' ? (
                                 <div key={index} className="mx-2 h-full w-0.5 bg-neutral-30" />
                             ) : (

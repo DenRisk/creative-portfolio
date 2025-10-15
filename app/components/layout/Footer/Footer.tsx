@@ -27,9 +27,12 @@ function Footer() {
           ))}
         </div>
         <div className="flex flex-col gap-4">
-          <h4>Languages</h4>
-          <p>German</p>
-          <p>English</p>
+          <h4>Creation</h4>
+          <div>
+            <p>Built with Next.js & Tailwind CSS</p>
+            <p>Design in Figma</p>
+            <p>Illustrations in Blender</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,7 +7,8 @@ function Button({children, variant = "primary", onClick}: ButtonComponentModel) 
     const variants = {
         primary: "text-neutral-0 bg-gradient-to-b from-accent-primary to-accent-secondary",
         secondary: "text-neutral-0 bg-transparent border-1 border-accent-primary",
-        link: "text-neutral-50 bg-transparent hover:text-neutral-0"
+        link: "text-neutral-30 bg-transparent hover:text-neutral-0",
+        linkWithBorder: "text-neutral-30 bg-transparent border-1 border-neutral-30 hover:text-neutral-0 hover:border-neutral-0"
     };
 
     return (
