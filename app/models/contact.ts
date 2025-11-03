@@ -1,4 +1,4 @@
-import { IconIds } from './icon'
+import { IconIds } from '@/app/models/icons'
 
 export type Contact = {
   email: string

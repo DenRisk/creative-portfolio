@@ -1,8 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { Project } from '@/app/models/project'
+import {Project} from '@/app/models/project'
 import Icon from './Icon'
-import Button from '@/app/components/ui/Button'
 import ButtonLink from '@/app/components/ui/ButtonLink'
 
 function ProjectCard({ title, description, image, techIcons, siteUrl, codeUrl }: Project) {

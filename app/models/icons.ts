@@ -5,3 +5,5 @@ export type IconProps = {
   pointer?: boolean
   size?: number
 }
+
+export default {}

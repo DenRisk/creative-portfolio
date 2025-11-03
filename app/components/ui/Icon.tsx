@@ -1,4 +1,4 @@
-import { IconProps } from '@/app/models/icon'
+import { IconProps } from '@/app/models/icons'
 
 const Icon = ({ id, pointer = false, size = 20 }: IconProps) => {
   const icons = {
