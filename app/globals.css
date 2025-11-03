@@ -63,7 +63,7 @@
     }
 
     section {
-        @apply scroll-mt-12;
+        @apply scroll-mt-32;
     }
 
     h1,

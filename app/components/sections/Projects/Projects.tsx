@@ -4,14 +4,7 @@ import ProjectCard from '@/app/components/ui/ProjectCard'
 import {projects} from '@/app/data/data'
 import Button from '@/app/components/ui/Button'
 import {ProjectFilter, ProjectFilterCodes} from '@/app/models/project'
-import Icon from '@/app/components/ui/Icon'
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
 
 function Projects() {
     const [showAll, setShowAll] = useState(false)
